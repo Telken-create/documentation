@@ -67,12 +67,6 @@ Start of by seraching Powershell under Search bar and, rightclick PowerShell and
 This is where you will get started to run commands and search files, specs and more.
 <img width="679" height="423" alt="image" src="https://github.com/user-attachments/assets/2244aca7-272e-4033-ac97-e3ae38e53d9e" />
 
-***Find out your current TimeZone***
-
-To find your current TimeZone. Type this command
-```
-Get-TimeZone
-
 
 
 ***Find your PC Specs***
@@ -88,6 +82,27 @@ To find your GPU, type this command -->
 gwmi win32_VideoController | FL Name
 ```
 <img width="489" height="105" alt="image" src="https://github.com/user-attachments/assets/b0c17253-07f8-4125-812d-f273b4982e3b" />
+
+***Find out your Ram***
+
+To find your Ram, Type this command 
+```
+Get-WmiObject Win32_PhysicalMemory | Format-Table BankLabel, Capacity, Manufacturer
+
+```
+
+<img width="869" height="141" alt="image" src="https://github.com/user-attachments/assets/2005ae02-3f5b-41a4-8478-69ac66116565" />
+
+***Find out your CPU***
+
+To find your CPU, Type this command
+```
+Get-CimInstance Win32_Processor
+
+```
+<img width="970" height="114" alt="image" src="https://github.com/user-attachments/assets/b158b458-f81d-4c64-8917-8591d2389b7e" />
+
+
 
 
 
