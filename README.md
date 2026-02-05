@@ -1,34 +1,8 @@
-# device-hardware-connector-map
-Documenting all external ports and identifying motherboard/ platform details specs and more
-Document all external ports, if you can open your desktop also identify all internal connectors. Please take 6-10 labeled photos (ports + any internal components you can safely access) A one page "connector map" (diagram/table) that matches port/connector -> purpose -> common issue (ex: USB C data + power + video sometimes: common issue: wrong cable (Thunderbolt))
-
-If you have a laptop:
-
-Use system tools to identify motherboard / platform details
-Collect screenshots: 
-System Information (Model/Bios), 
-Device Manager (Network adapters, Display adapters), 
-Storage type (disk drives / task manager) (HDD/SATA SSD, NVMe SSD (Capacity vs storage left))
-OS Name
-In general (specs)
-Manufacturer and Model of Device
-CPU
-Cores + threads
-RAM Amount
-RAM Speed 
-On board or dedicated GPU (Model?)
-
-UEFI or Legacy BIOS Mode?
-Secure Boot Enabled?
-Do you have a TPM?
-
-
-
 ## Device Overview
 My PC has been prebuilt around 2018 with decent specs.
 Here is the link https://pcpartpicker.com/user/Telken_/builds/#view=btk6Mp
 # Manufacturer:
-Gigabyte Technology Co., Ltd''
+Gigabyte Technology Co., Ltd
 
 # OS Name: 
 ```
@@ -82,24 +56,21 @@ Samsung SM961 1 TB M.2-2280 PCIe 3.0 X4 NVME Solid State Drive
 | RAM Slot | Internal | Memory expansion | Improper seating |
 | NVMe Slot | Internal | Primary storage | BIOS not detecting drive |
 
-## System Information Evidence
 
-### System Information
-![System Info](screenshots/system_information.png)
 
-### Device Manager – Network Adapters
-![Network](screenshots/device_manager_network.png)
-
-### Device Manager – Display Adapters
-![Display](screenshots/device_manager_display.png)
-
-### Storage Information
-![Storage](screenshots/storage_info.png)
-
-### BIOS / UEFI
-![BIOS](screenshots/bios_uefi.png)
-
-### How To:
-Use PowerShell to retrieve information
+### How To PowerShell:
+Today we will be using PowerShell to retrieve information
+of our PC Specs!
+Start of by seraching Powershell under Search bar and, rightclick PowerShell and click Run as Administrator.
+This is where you will get started to run commands and search files, specs and more.
+<img width="679" height="423" alt="image" src="https://github.com/user-attachments/assets/2244aca7-272e-4033-ac97-e3ae38e53d9e" />
 
 **Find out your current TimeZone**
+
+
+**Find your PC Specs**
+To find list of Computer Specs, type Get-ComputerInfo on PowerShell
+<img width="942" height="148" alt="image" src="https://github.com/user-attachments/assets/b15fc1a0-c95e-4247-9e89-0e0da7657a2f" />
+<img width="503" height="22" alt="image" src="https://github.com/user-attachments/assets/5167af22-d4df-43ca-84cc-6af414a1f6e8" />
+
+
