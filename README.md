@@ -1,4 +1,4 @@
-#System Information Inventory (CLI + GUI)
+# System Information Inventory (CLI + GUI) #
 
 ## PC Overview
 My PC has been prebuilt around 2018 with decent specs.
