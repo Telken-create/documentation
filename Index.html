@@ -1,0 +1,184 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>System Information Inventory</title>
+  <meta name="description" content="System Information Inventory (CLI + GUI)" />
+  <!-- STYLE SECTION UNCHANGED -->
+  <!-- KEEP YOUR EXISTING <style> BLOCK HERE EXACTLY AS PROVIDED -->
+</head>
+
+<body>
+<header>
+  <div class="topbar">
+    <div class="brand">
+      <div class="logo">
+        <svg viewBox="0 0 24 24"><path d="M12 2l9 4v6c0 5-3.8 9.7-9 10-5.2-.3-9-5-9-10V6l9-4z"/></svg>
+      </div>
+      <div>
+        <h1>Knowledge Base Article</h1>
+        <div style="font-size:12px;color:var(--muted);margin-top:2px;">Windows 11</div>
+      </div>
+    </div>
+  </div>
+</header>
+
+<div class="wrap">
+  <div class="grid">
+
+    <aside>
+      <div class="panel">
+        <div class="hd">
+          <strong>On this page</strong>
+        </div>
+        <div class="bd">
+          <ul class="toc" id="toc"></ul>
+        </div>
+      </div>
+    </aside>
+
+    <main>
+      <article class="panel">
+
+        <section class="hero">
+          <div class="title">
+            <h2 id="article-title">System Information Inventory (CLI + GUI)</h2>
+            <div class="meta">
+              <span class="chip"><b>OS:</b> Windows 11 Pro</span>
+              <span class="chip"><b>Type:</b> Hardware Inventory</span>
+              <span class="chip"><b>Updated:</b> 2026</span>
+            </div>
+          </div>
+
+          <p id="article-summary">
+            This document provides a complete system hardware inventory using both GUI references
+            and PowerShell-based CLI commands. It includes CPU, RAM, GPU, storage devices, and
+            a connector map for troubleshooting and documentation.
+          </p>
+        </section>
+
+        <div class="content" id="content">
+
+          <div class="divider"></div>
+
+          <h3 id="overview">PC Overview</h3>
+          <p>
+            Prebuilt desktop system originally assembled around 2018 with solid performance-oriented components.
+          </p>
+          <p>
+            <b>PCPartPicker Build:</b>
+            <a href="https://pcpartpicker.com/user/Telken_/builds/#view=btk6Mp" target="_blank">
+              View build
+            </a>
+          </p>
+
+          <h3 id="manufacturer">Manufacturer</h3>
+          <p>Gigabyte Technology Co., Ltd</p>
+
+          <h3 id="os">Operating System</h3>
+          <pre><code>Microsoft Windows 11 Pro</code></pre>
+
+          <h3 id="cpu">CPU</h3>
+          <pre><code>Intel(R) Core(TM) i7-8700K CPU @ 3.70GHz
+6 Cores / 12 Logical Processors</code></pre>
+          <img src="https://github.com/Telken-create/device-hardware-connector-map/blob/1191861bbb43a3830d291131dd7c22b904be8d78/intelcorei7.jpg" alt="Intel i7 CPU" />
+
+          <h3 id="ram">RAM</h3>
+          <pre><code>Corsair Vengeance RGB Pro
+16 GB (2 x 8 GB) DDR4-3200</code></pre>
+          <img src="https://github.com/Telken-create/device-hardware-connector-map/blob/b8155877cefcbc323893bf8e8eab6222f59b6af7/Corsair%20Vengeance%20RGB%20Pro.jpg" alt="Corsair RAM" />
+
+          <h3 id="gpu">GPU</h3>
+          <pre><code>Gigabyte TURBO OC GeForce GTX 1080
+8 GB VRAM</code></pre>
+          <img src="https://github.com/Telken-create/device-hardware-connector-map/blob/b8155877cefcbc323893bf8e8eab6222f59b6af7/gigabytegeforcegtx.jpg" alt="GTX 1080" />
+
+          <h3 id="storage">Storage</h3>
+          <pre><code>2x Samsung 850 EVO 250GB SATA SSD
+Samsung SM961 1TB NVMe SSD</code></pre>
+
+          <h3 id="connectors">External & Internal Connector Map</h3>
+          <table>
+            <thead>
+              <tr>
+                <th>Port / Connector</th>
+                <th>Location</th>
+                <th>Purpose</th>
+                <th>Common Issues</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td>USB-C</td>
+                <td>Left</td>
+                <td>Data / Power / Video</td>
+                <td>Incorrect cable</td>
+              </tr>
+              <tr>
+                <td>USB-A 3.0</td>
+                <td>Right</td>
+                <td>Peripherals</td>
+                <td>Port wear</td>
+              </tr>
+              <tr>
+                <td>HDMI</td>
+                <td>Rear</td>
+                <td>Display output</td>
+                <td>Resolution mismatch</td>
+              </tr>
+              <tr>
+                <td>Ethernet</td>
+                <td>Rear</td>
+                <td>Networking</td>
+                <td>Driver issues</td>
+              </tr>
+              <tr>
+                <td>NVMe Slot</td>
+                <td>Internal</td>
+                <td>Primary storage</td>
+                <td>BIOS detection</td>
+              </tr>
+            </tbody>
+          </table>
+
+          <div class="divider"></div>
+
+          <h3 id="powershell">PowerShell System Queries</h3>
+
+          <h3 id="specs">Find PC Specs</h3>
+          <pre><code>Get-ComputerInfo</code></pre>
+
+          <h3 id="gpu-cli">Find GPU</h3>
+          <pre><code>gwmi win32_VideoController | FL Name</code></pre>
+
+          <h3 id="ram-cli">Find RAM</h3>
+          <pre><code>Get-WmiObject Win32_PhysicalMemory |
+Format-Table BankLabel, Capacity, Manufacturer</code></pre>
+
+          <h3 id="cpu-cli">Find CPU</h3>
+          <pre><code>Get-CimInstance Win32_Processor</code></pre>
+
+          <h3 id="storage-cli">Find Storage</h3>
+          <pre><code>Get-Disk | Format-Table -AutoSize</code></pre>
+
+          <div class="divider"></div>
+
+          <p style="font-size:12px;color:var(--muted);">
+            Owner: <b>Antonio Castro</b>
+          </p>
+
+        </div>
+      </article>
+
+      <footer>
+        System Hardware Inventory — Windows 11
+      </footer>
+
+    </main>
+  </div>
+</div>
+
+<!-- KEEP YOUR ORIGINAL <script> BLOCK UNCHANGED -->
+</body>
+</html>
